@@ -1,6 +1,6 @@
 import React from "react";
 
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createDrawerNavigator, DrawerItem } from "@react-navigation/drawer";
 import Home from "../screens/home/Home";
 import Registration from "../screens/registration/Registration";
 import Login from "../screens/login/Login";
@@ -15,12 +15,14 @@ export default function AppNavigation() {
       <View
         style={{
           paddingTop: 25,
+          padding: 10,
           flex: 1,
 
           display: "flex",
           justifyContent: "space-between",
         }}
       >
+        {/* Side Bar Top Image */}
         <View>
           <View style={{ alignItems: "center" }}>
             <Image
@@ -39,15 +41,64 @@ export default function AppNavigation() {
             </Text>
           </View>
 
-          <DrawerItemList
-            activeBackgroundColor="#f4511e"
-            activeTintColor="white"
-            labelStyle={{
-              fontWeight: "bold",
-            }}
-            {...props}
-          />
+          {/* SideBar Items */}
+
+          <View>
+            <DrawerItem
+              labelStyle={{
+                fontWeight: "bold",
+                color: "#f4511e",
+                textTransform: "uppercase",
+              }}
+              style={{
+                borderColor: "transparent",
+                borderBottomColor: "#f4511e",
+                borderWidth: 0.5,
+              }}
+              label="login"
+              onPress={() => props.navigation.navigate("Login")}
+            />
+            <DrawerItem
+              labelStyle={{
+                fontWeight: "bold",
+                color: "#f4511e",
+                textTransform: "uppercase",
+              }}
+              style={{
+                borderColor: "transparent",
+                borderBottomColor: "#f4511e",
+                borderWidth: 0.5,
+              }}
+              label="Registration"
+              onPress={() => props.navigation.navigate("Registration")}
+            />
+            <DrawerItem
+              labelStyle={{
+                fontWeight: "bold",
+                color: "#f4511e",
+                textTransform: "uppercase",
+              }}
+              style={{
+                borderColor: "transparent",
+                borderBottomColor: "#f4511e",
+                borderWidth: 0.5,
+              }}
+              label="Home"
+              onPress={() => props.navigation.navigate("Home")}
+            />
+          </View>
+
+          {/* SideBar Footer */}
         </View>
+        <Text
+          style={{
+            alignSelf: "center",
+            color: "#f4511e",
+          }}
+        >
+          {" "}
+          By Afrosiyob 🐝{" "}
+        </Text>
       </View>
     );
   }

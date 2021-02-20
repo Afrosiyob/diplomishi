@@ -4,24 +4,78 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 export default function TopHeader(props) {
   return (
     <View style={styles.container}>
-      {props.isHome ? null : (
+      <View style={{ display: "flex", flexDirection: "row" }}>
+        <Pressable onPress={() => props.navigation.openDrawer()}>
+          <Image
+            style={{ width: 20, height: 20, marginRight: 10 }}
+            source={require("../../../assets/icons8-menu-96.png")}
+          />
+        </Pressable>
+        <Text style={styles.textTitle}>{props.title}</Text>
+      </View>
+
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
         <Pressable
+          onPress={() => props.navigation.navigate("Login")}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            marginRight: 10,
+            borderRadius: 5,
+            borderColor: "#f4511e",
+            borderWidth: 2,
+            padding: 2,
+            paddingLeft: 10,
+          }}
+        >
+          <Text
+            style={{ color: "#f4511e", fontWeight: "bold", marginRight: 5 }}
+          >
+            Sign In
+          </Text>
+          <Image
+            style={{ width: 20, height: 20, marginRight: 10 }}
+            source={require("../../../assets/Login96.png")}
+          />
+        </Pressable>
+        {/* <Pressable
           onPress={() => props.navigation.goBack()}
           style={{ display: "flex", flexDirection: "row" }}
         >
           <Image
             style={{ width: 20, height: 20, marginRight: 10 }}
-            source={require("../../../assets/icons8-left-90.png")}
+            source={require("../../../assets/icons8-u-turn-to-left-100.png")}
+          />
+        </Pressable> */}
+        <Pressable
+          onPress={() => props.navigation.navigate("Registration")}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            marginRight: 10,
+            borderRadius: 5,
+            borderColor: "#f4511e",
+            borderWidth: 2,
+            padding: 2,
+            paddingLeft: 10,
+          }}
+        >
+          <Text
+            style={{ color: "#f4511e", fontWeight: "bold", marginRight: 5 }}
+          >
+            Sign Up
+          </Text>
+          <Image
+            style={{ width: 20, height: 20, marginRight: 10 }}
+            source={require("../../../assets/Login96.png")}
           />
         </Pressable>
-      )}
-      <Text style={styles.textTitle}>{props.title}</Text>
-      <Pressable onPress={() => props.navigation.openDrawer()}>
-        <Image
-          style={{ width: 20, height: 20 }}
-          source={require("../../../assets/dot-menu-vertical-100.png")}
-        />
-      </Pressable>
+      </View>
     </View>
   );
 }
@@ -29,7 +83,7 @@ export default function TopHeader(props) {
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    backgroundColor: "#f4511e",
+    backgroundColor: "white",
     height: 70,
     paddingTop: 22,
     paddingHorizontal: 16,
@@ -40,7 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   textTitle: {
-    color: "white",
+    color: "#f4511e",
     fontWeight: "bold",
     fontSize: 20,
   },

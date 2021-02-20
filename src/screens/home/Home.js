@@ -7,7 +7,7 @@ export default function Home(props) {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <TopHeader navigation={navigation} isHome={true} title="Home" />
+      <TopHeader navigation={navigation} isHome={true} title="Shoppers" />
 
       <Pressable onPress={() => navigation.navigate("Login")}>
         <Text>go to login</Text>
