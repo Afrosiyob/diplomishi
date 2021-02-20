@@ -6,10 +6,34 @@ import Registration from "../screens/registration/Registration";
 import Login from "../screens/login/Login";
 import { NavigationContainer } from "@react-navigation/native";
 import { DrawerItemList } from "@react-navigation/drawer";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, Settings } from "react-native";
+import Setting from "../screens/settings/Setting";
+import Security from "../screens/security/Security";
 export default function AppNavigation() {
   const Drawer = createDrawerNavigator();
 
+  const driverData = [
+    {
+      label: "Home",
+      navigate: "Home",
+    },
+    {
+      label: "Security",
+      navigate: "Security",
+    },
+    {
+      label: "Login",
+      navigate: "Login",
+    },
+    {
+      label: "Registration",
+      navigate: "Registration",
+    },
+    {
+      label: "Setting",
+      navigate: "Setting",
+    },
+  ];
   function CustomDrawerContent(props) {
     return (
       <View
@@ -44,48 +68,22 @@ export default function AppNavigation() {
           {/* SideBar Items */}
 
           <View>
-            <DrawerItem
-              labelStyle={{
-                fontWeight: "bold",
-                color: "#f4511e",
-                textTransform: "uppercase",
-              }}
-              style={{
-                borderColor: "transparent",
-                borderBottomColor: "#f4511e",
-                borderWidth: 0.5,
-              }}
-              label="login"
-              onPress={() => props.navigation.navigate("Login")}
-            />
-            <DrawerItem
-              labelStyle={{
-                fontWeight: "bold",
-                color: "#f4511e",
-                textTransform: "uppercase",
-              }}
-              style={{
-                borderColor: "transparent",
-                borderBottomColor: "#f4511e",
-                borderWidth: 0.5,
-              }}
-              label="Registration"
-              onPress={() => props.navigation.navigate("Registration")}
-            />
-            <DrawerItem
-              labelStyle={{
-                fontWeight: "bold",
-                color: "#f4511e",
-                textTransform: "uppercase",
-              }}
-              style={{
-                borderColor: "transparent",
-                borderBottomColor: "#f4511e",
-                borderWidth: 0.5,
-              }}
-              label="Home"
-              onPress={() => props.navigation.navigate("Home")}
-            />
+            {driverData.map((item, index) => (
+              <DrawerItem
+                labelStyle={{
+                  fontWeight: "bold",
+                  color: "#f4511e",
+                  textTransform: "uppercase",
+                }}
+                style={{
+                  borderColor: "transparent",
+                  borderBottomColor: "#f4511e",
+                  borderWidth: 0.5,
+                }}
+                label={item.label}
+                onPress={() => props.navigation.navigate(item.navigate)}
+              />
+            ))}
           </View>
 
           {/* SideBar Footer */}
@@ -93,23 +91,27 @@ export default function AppNavigation() {
         <Text
           style={{
             alignSelf: "center",
-            color: "#f4511e",
+            color: "grey",
           }}
         >
           {" "}
-          By Afrosiyob 🐝{" "}
+          By Afrosiyob 🐝 &#174; 2021{" "}
         </Text>
       </View>
     );
   }
+
   return (
     <NavigationContainer>
       <Drawer.Navigator
+        initialRouteName="Home"
         drawerContent={(props) => <CustomDrawerContent {...props} />}
       >
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Registration" component={Registration} />
+        <Drawer.Screen name="Setting" component={Setting} />
+        <Drawer.Screen name="Security" component={Security} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
