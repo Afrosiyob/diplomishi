@@ -11,6 +11,7 @@ import {
 import TopHeader from "../../components/topHeader/TopHeader";
 import Carousel from "react-native-snap-carousel";
 import ProductCard from "../../components/productCard/ProductCard";
+
 export default function Home(props) {
   const { navigation } = props;
 
@@ -88,7 +89,6 @@ export default function Home(props) {
             Best sell products
           </Text>
         </View>
-
         <View
           style={{
             flexDirection: "row",
@@ -135,7 +135,6 @@ export default function Home(props) {
           <ProductCard />
           <ProductCard />
         </View>
-
         <Text style={{ fontSize: 50 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
