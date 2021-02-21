@@ -6,7 +6,7 @@ import Registration from "../screens/registration/Registration";
 import Login from "../screens/login/Login";
 import { NavigationContainer } from "@react-navigation/native";
 import { DrawerItemList } from "@react-navigation/drawer";
-import { View, Image, Text, Settings } from "react-native";
+import { View, Image, Text, Settings, Pressable } from "react-native";
 import Setting from "../screens/settings/Setting";
 import Security from "../screens/security/Security";
 export default function AppNavigation() {
@@ -48,6 +48,16 @@ export default function AppNavigation() {
       >
         {/* Side Bar Top Image */}
         <View>
+          <Pressable
+            style={{ alignSelf: "flex-end" }}
+            onPress={() => props.navigation.closeDrawer()}
+          >
+            <Image
+              style={{ width: 40, height: 40 }}
+              source={require("../../assets/sidebar-left-100.png")}
+            />
+          </Pressable>
+
           <View style={{ alignItems: "center" }}>
             <Image
               style={{ width: 150, height: 150 }}
