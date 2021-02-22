@@ -138,6 +138,8 @@ export default function Home(props) {
               Best sell products
             </Text>
             <View>
+
+          
               <DropDown />
             </View>
           </View>
