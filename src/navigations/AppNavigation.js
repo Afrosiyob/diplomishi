@@ -9,6 +9,7 @@ import { DrawerItemList } from "@react-navigation/drawer";
 import { View, Image, Text, Settings, Pressable } from "react-native";
 import Setting from "../screens/settings/Setting";
 import Security from "../screens/security/Security";
+import AllProducts from "../screens/allProducts/AllProducts";
 export default function AppNavigation() {
   const Drawer = createDrawerNavigator();
 
@@ -32,6 +33,10 @@ export default function AppNavigation() {
     {
       label: "Setting",
       navigate: "Setting",
+    },
+    {
+      label: "All products",
+      navigate: "AllProducts",
     },
   ];
   function CustomDrawerContent(props) {
@@ -80,6 +85,7 @@ export default function AppNavigation() {
           <View>
             {driverData.map((item, index) => (
               <DrawerItem
+                key={index}
                 labelStyle={{
                   fontWeight: "bold",
                   color: "#f4511e",
@@ -122,6 +128,7 @@ export default function AppNavigation() {
         <Drawer.Screen name="Registration" component={Registration} />
         <Drawer.Screen name="Setting" component={Setting} />
         <Drawer.Screen name="Security" component={Security} />
+        <Drawer.Screen name="AllProducts" component={AllProducts} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
