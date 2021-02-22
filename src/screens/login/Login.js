@@ -7,7 +7,7 @@ export default function Login(props) {
   const { navigation } = props;
   return (
     <View>
-      {/* <TopHeader navigation={navigation} isHome={false} title="Login" /> */}
+      <TopHeader navigation={navigation} isHome={false} title="Login" />
       <Text>this is login page</Text>
       <DropDown />
     </View>

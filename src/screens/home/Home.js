@@ -11,6 +11,7 @@ import {
 import TopHeader from "../../components/topHeader/TopHeader";
 import Carousel from "react-native-snap-carousel";
 import ProductCard from "../../components/productCard/ProductCard";
+import DropDown from "../../components/dropDown/DropDown";
 
 export default function Home(props) {
   const { navigation } = props;
@@ -105,7 +106,15 @@ export default function Home(props) {
             onSnapToItem={(index) => setState({ ...state, activeIndex: index })}
           />
         </View>
-        <View>
+        <View
+          style={{
+            borderColor: "transparent",
+            borderBottomColor: "#f4511e",
+            borderLeftWidth: 0,
+            borderRightWidth: 0,
+            borderWidth: 1,
+          }}
+        >
           <Text
             style={{
               fontSize: 40,
@@ -116,24 +125,37 @@ export default function Home(props) {
           >
             Jordans for Mens
           </Text>
-          <Text style={{ color: "grey", fontSize: 20 }}>
-            Best sell products
-          </Text>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ color: "grey", fontSize: 20 }}>
+              Best sell products
+            </Text>
+            <View>
+              <DropDown />
+            </View>
+          </View>
         </View>
 
         <View>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard key="1" />
+          <ProductCard key="2" />
+          <ProductCard key="3" />
+          <ProductCard key="4" />
+          <ProductCard key="5" />
+          <ProductCard key="6" />
+          <ProductCard key="7" />
+          <ProductCard key="8" />
+          <ProductCard key="9" />
+          <ProductCard key="10" />
+          <ProductCard key="11" />
+          <ProductCard key="12" />
         </View>
         <Text style={{ fontSize: 50 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

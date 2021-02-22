@@ -4,6 +4,8 @@ import RNPickerSelect from "react-native-picker-select";
 
 export default function DropDown() {
   const [selectedValue, setSelectedValue] = useState("java");
+  console.log(selectedValue);
+
   return (
     <Picker
       selectedValue={selectedValue}
