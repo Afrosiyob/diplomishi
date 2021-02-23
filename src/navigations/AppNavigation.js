@@ -10,6 +10,7 @@ import { View, Image, Text, Settings, Pressable } from "react-native";
 import Setting from "../screens/settings/Setting";
 import Security from "../screens/security/Security";
 import AllProducts from "../screens/allProducts/AllProducts";
+import ProductDetail from "../screens/productDetail/ProductDetail";
 export default function AppNavigation() {
   const Drawer = createDrawerNavigator();
 
@@ -80,8 +81,6 @@ export default function AppNavigation() {
             </Text>
           </View>
 
-          {/* SideBar Items */}
-
           <View>
             {driverData.map((item, index) => (
               <DrawerItem
@@ -129,6 +128,7 @@ export default function AppNavigation() {
         <Drawer.Screen name="Setting" component={Setting} />
         <Drawer.Screen name="Security" component={Security} />
         <Drawer.Screen name="AllProducts" component={AllProducts} />
+        <Drawer.Screen name="ProductDetail" component={ProductDetail} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

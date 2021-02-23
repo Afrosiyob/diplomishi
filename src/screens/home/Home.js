@@ -12,6 +12,8 @@ import TopHeader from "../../components/topHeader/TopHeader";
 import Carousel from "react-native-snap-carousel";
 import ProductCard from "../../components/productCard/ProductCard";
 import DropDown from "../../components/dropDown/DropDown";
+import HeaderText from "../../components/headerText/HeaderText";
+import CarouselItem from "../../components/carouselItem/CarouselItem";
 
 export default function Home(props) {
   const { navigation } = props;
@@ -42,50 +44,11 @@ export default function Home(props) {
     ],
   });
 
-  function _renderItem({ item, index }) {
-    return (
-      <View
-        style={{
-          borderRadius: 5,
-
-          marginLeft: 25,
-          marginRight: 25,
-          flex: 1,
-        }}
-      >
-        <Image
-          style={{
-            width: 240,
-            height: 240,
-            borderRadius: 5,
-          }}
-          source={require("../../../assets/jordan-1-wmns-satin-snakeskin-CD0461-601-4.jpg")}
-        />
-
-        <Text style={{ fontSize: 30 }}>{item.title}</Text>
-        <Text>{item.text}</Text>
-      </View>
-    );
-  }
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <TopHeader navigation={navigation} isHome={true} title="Shoppers" />
       <ScrollView style={{ padding: 16 }}>
-        <View>
-          <Text
-            style={{
-              fontSize: 40,
-              fontWeight: "bold",
-              color: "black",
-            }}
-          >
-            Best sell products
-          </Text>
-          <Text style={{ color: "grey", fontSize: 20 }}>
-            Best sell products
-          </Text>
-        </View>
+        <HeaderText />
         <View
           style={{
             flexDirection: "row",
@@ -98,7 +61,7 @@ export default function Home(props) {
             data={state.carouselItems}
             sliderWidth={300}
             itemWidth={300}
-            renderItem={_renderItem}
+            renderItem={CarouselItem}
             onSnapToItem={(index) => setState({ ...state, activeIndex: index })}
           />
         </View>
@@ -111,28 +74,17 @@ export default function Home(props) {
             borderWidth: 2,
           }}
         >
-          <Text
-            style={{
-              fontSize: 40,
-              fontWeight: "bold",
+          <HeaderText />
 
-              color: "black",
-            }}
-          >
-            Jordans for Mens
-          </Text>
           <View
             style={{
               flex: 1,
               flexDirection: "row",
-              justifyContent: "space-between",
+              justifyContent: "flex-end",
               alignContent: "center",
               alignItems: "center",
             }}
           >
-            <Text style={{ color: "grey", fontSize: 20 }}>
-              Best sell products
-            </Text>
             <View>
               <DropDown />
             </View>
@@ -140,11 +92,11 @@ export default function Home(props) {
         </View>
 
         <View style={{ paddingBottom: 30 }}>
-          <ProductCard key="1" />
-          <ProductCard key="2" />
-          <ProductCard key="3" />
-          <ProductCard key="4" />
-          <ProductCard key="5" />
+          <ProductCard key="1" navigation={navigation} />
+          <ProductCard key="2" navigation={navigation} />
+          <ProductCard key="3" navigation={navigation} />
+          <ProductCard key="4" navigation={navigation} />
+          <ProductCard key="5" navigation={navigation} />
         </View>
       </ScrollView>
     </SafeAreaView>
