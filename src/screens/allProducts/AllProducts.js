@@ -4,14 +4,16 @@ import HeaderText from "../../components/headerText/HeaderText";
 import ProductCard from "../../components/productCard/ProductCard";
 import SearchBox from "../../components/searchBox/SearchBox";
 import TopHeader from "../../components/topHeader/TopHeader";
-
+import { useScrollToTop } from "@react-navigation/native";
 export default function AllProducts(props) {
   const { navigation } = props;
+  const ref = React.useRef(null);
+
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <TopHeader navigation={navigation} isHome={false} title="All products" />
 
-      <ScrollView style={{ padding: 16 }}>
+      <ScrollView ref={ref} style={{ padding: 16 }}>
         <HeaderText />
         <View style={{ flex: 1, marginVertical: 16 }}>
           <SearchBox />
