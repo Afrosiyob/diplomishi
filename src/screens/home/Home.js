@@ -14,6 +14,7 @@ import ProductCard from "../../components/productCard/ProductCard";
 import DropDown from "../../components/dropDown/DropDown";
 import HeaderText from "../../components/headerText/HeaderText";
 import CarouselItem from "../../components/carouselItem/CarouselItem";
+import GeoMap from "../../components/geoMap/GeoMap";
 
 export default function Home(props) {
   const { navigation } = props;
@@ -98,6 +99,8 @@ export default function Home(props) {
           <ProductCard key="4" navigation={navigation} />
           <ProductCard key="5" navigation={navigation} />
         </View>
+        <HeaderText />
+        <GeoMap />
       </ScrollView>
     </SafeAreaView>
   );
