@@ -82,7 +82,6 @@ export default function TopHeader(props) {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     backgroundColor: "white",
     height: 70,
     paddingTop: 22,

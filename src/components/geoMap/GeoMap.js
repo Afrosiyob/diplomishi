@@ -21,6 +21,9 @@ export default function GeoMap() {
           longitudeDelta: 0.0421,
         }}
         showsUserLocation={true}
+        followsUserLocation={true}
+        loadingEnable={true}
+        showsCompass
       />
     </View>
   );

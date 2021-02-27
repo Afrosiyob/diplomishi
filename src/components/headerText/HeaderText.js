@@ -1,7 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function HeaderText() {
+export default function HeaderText({
+  title = "Best take home products",
+  subTitle = "Best take home products",
+}) {
   return (
     <View>
       <Text
@@ -11,9 +14,9 @@ export default function HeaderText() {
           color: "black",
         }}
       >
-        Best sell products
+        {title}
       </Text>
-      <Text style={{ color: "grey", fontSize: 20 }}>Best sell products</Text>
+      <Text style={{ color: "grey", fontSize: 20 }}>{subTitle}</Text>
     </View>
   );
 }

@@ -1,13 +1,5 @@
-import React, { useState } from "react";
-import {
-  Image,
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import React, { useState, useEffect } from "react";
+import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 import TopHeader from "../../components/topHeader/TopHeader";
 import Carousel from "react-native-snap-carousel";
 import ProductCard from "../../components/productCard/ProductCard";
@@ -15,9 +7,14 @@ import DropDown from "../../components/dropDown/DropDown";
 import HeaderText from "../../components/headerText/HeaderText";
 import CarouselItem from "../../components/carouselItem/CarouselItem";
 import GeoMap from "../../components/geoMap/GeoMap";
-
+import { SetToken } from "../../store/Token/SetToken";
+import * as Animatable from "react-native-animatable";
 export default function Home(props) {
   const { navigation } = props;
+
+  useEffect(() => {
+    SetToken();
+  });
 
   const [state, setState] = useState({
     activeIndex: 0,
@@ -49,7 +46,9 @@ export default function Home(props) {
     <SafeAreaView style={{ flex: 1 }}>
       <TopHeader navigation={navigation} isHome={true} title="Shoppers" />
       <ScrollView style={{ padding: 16 }}>
-        <HeaderText />
+        <Animatable.View animation="fadeInUp">
+          <HeaderText />
+        </Animatable.View>
         <View
           style={{
             flexDirection: "row",
@@ -99,7 +98,7 @@ export default function Home(props) {
           <ProductCard key="4" navigation={navigation} />
           <ProductCard key="5" navigation={navigation} />
         </View>
-        <HeaderText />
+        <HeaderText title="map" subTitle="gogo map" />
         <GeoMap />
       </ScrollView>
     </SafeAreaView>
