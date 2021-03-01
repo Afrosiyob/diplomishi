@@ -43,15 +43,7 @@ export default function TopHeader(props) {
             source={require("../../../assets/Login96.png")}
           />
         </Pressable>
-        {/* <Pressable
-          onPress={() => props.navigation.goBack()}
-          style={{ display: "flex", flexDirection: "row" }}
-        >
-          <Image
-            style={{ width: 20, height: 20, marginRight: 10 }}
-            source={require("../../../assets/icons8-u-turn-to-left-100.png")}
-          />
-        </Pressable> */}
+
         <Pressable
           onPress={() => props.navigation.navigate("Registration")}
           style={{
