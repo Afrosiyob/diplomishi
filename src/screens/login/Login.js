@@ -15,7 +15,7 @@ export default function Login(props) {
       <TopHeader navigation={navigation} isHome={false} title="Login" />
       <ScrollView style={{ flex: 1 }}>
         <Formik
-          initialValues={{ email: "" }}
+          initialValues={{ email: "", password: "" }}
           onSubmit={(values) => console.log(values)}
         >
           {({ handleChange, handleBlur, handleSubmit, values }) => (
@@ -34,12 +34,22 @@ export default function Login(props) {
 
               <TextInput
                 style={styles.inputStyle}
-                keyboardType="numeric"
+                // keyboardType="numeric"
                 onChangeText={handleChange("email")}
                 onBlur={handleBlur("email")}
                 value={values.email}
-                placeholder="enter text"
+                placeholder="Enter your email"
               />
+
+              <TextInput
+                style={styles.inputStyle}
+                // keyboardType="numeric"
+                onChangeText={handleChange("password")}
+                onBlur={handleBlur("password")}
+                value={values.password}
+                placeholder="Enter Your password"
+              />
+
               <Button onPress={handleSubmit} title="Submit" />
             </View>
           )}
