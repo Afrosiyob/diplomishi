@@ -1,6 +1,14 @@
 import React from "react";
-import { StyleSheet, View, ScrollView, Button, Image } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  TextInput,
+  Image,
+  Pressable,
+  Text,
+} from "react-native";
+
 import { Formik } from "formik";
 import TopHeader from "../../components/topHeader/TopHeader";
 
@@ -50,7 +58,9 @@ export default function Login(props) {
                 placeholder="Enter Your password"
               />
 
-              <Button onPress={handleSubmit} title="Submit" />
+              <Pressable style={styles.btnStyle} onPress={handleSubmit}>
+                <Text style={{ color: "white" }}> Login </Text>
+              </Pressable>
             </View>
           )}
         </Formik>
@@ -68,5 +78,15 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 20,
     width: 250,
+  },
+  btnStyle: {
+    width: 250,
+    borderRadius: 20,
+    backgroundColor: "#f4511e",
+    display: "flex",
+    alignContent: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 12,
   },
 });
