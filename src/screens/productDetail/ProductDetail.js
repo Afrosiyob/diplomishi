@@ -62,27 +62,6 @@ export default function ProductDetail ( props ) {
 
           <ProductIno />
 
-
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
-          <Text>wefew</Text>
         </View>
       </ScrollView>
     </View>
