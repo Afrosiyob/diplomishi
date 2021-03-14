@@ -9,14 +9,14 @@ import CarouselItem from "../../components/carouselItem/CarouselItem";
 import GeoMap from "../../components/geoMap/GeoMap";
 import { SetToken } from "../../store/Token/SetToken";
 import * as Animatable from "react-native-animatable";
-export default function Home(props) {
+export default function Home ( props ) {
   const { navigation } = props;
 
-  useEffect(() => {
+  useEffect( () => {
     SetToken();
-  });
+  } );
 
-  const [state, setState] = useState({
+  const [ state, setState ] = useState( {
     activeIndex: 0,
     carouselItems: [
       {
@@ -40,50 +40,50 @@ export default function Home(props) {
         text: "Text 5",
       },
     ],
-  });
+  } );
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <TopHeader navigation={navigation} isHome={true} title="Shoppers" />
-      <ScrollView style={{ padding: 16 }}>
+    <SafeAreaView style={ { flex: 1 } }>
+      <TopHeader navigation={ navigation } isHome={ true } title="Shoppers" />
+      <ScrollView style={ { padding: 10 } }>
         <Animatable.View animation="fadeInUp">
           <HeaderText />
         </Animatable.View>
         <View
-          style={{
+          style={ {
             flexDirection: "row",
             paddingVertical: 16,
             flex: 1,
-          }}
+          } }
         >
           <Carousel
-            layout={"default"}
-            data={state.carouselItems}
-            sliderWidth={300}
-            itemWidth={300}
-            renderItem={CarouselItem}
-            onSnapToItem={(index) => setState({ ...state, activeIndex: index })}
+            layout={ "default" }
+            data={ state.carouselItems }
+            sliderWidth={ 300 }
+            itemWidth={ 300 }
+            renderItem={ CarouselItem }
+            onSnapToItem={ ( index ) => setState( { ...state, activeIndex: index } ) }
           />
         </View>
         <View
-          style={{
+          style={ {
             borderColor: "transparent",
             borderRightWidth: 0,
             borderLeftWidth: 0,
             borderBottomColor: "lightgrey",
             borderWidth: 2,
-          }}
+          } }
         >
           <HeaderText />
 
           <View
-            style={{
+            style={ {
               flex: 1,
               flexDirection: "row",
               justifyContent: "flex-end",
               alignContent: "center",
               alignItems: "center",
-            }}
+            } }
           >
             <View>
               <DropDown />
@@ -91,12 +91,12 @@ export default function Home(props) {
           </View>
         </View>
 
-        <View style={{ paddingBottom: 30 }}>
-          <ProductCard key="1" navigation={navigation} />
-          <ProductCard key="2" navigation={navigation} />
-          <ProductCard key="3" navigation={navigation} />
-          <ProductCard key="4" navigation={navigation} />
-          <ProductCard key="5" navigation={navigation} />
+        <View style={ { paddingBottom: 30 } }>
+          <ProductCard key="1" navigation={ navigation } />
+          <ProductCard key="2" navigation={ navigation } />
+          <ProductCard key="3" navigation={ navigation } />
+          <ProductCard key="4" navigation={ navigation } />
+          <ProductCard key="5" navigation={ navigation } />
         </View>
         <HeaderText title="map" subTitle="gogo map" />
         <GeoMap />
@@ -105,4 +105,4 @@ export default function Home(props) {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create( {} );
