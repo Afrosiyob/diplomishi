@@ -11,7 +11,6 @@ export default function Security ( props ) {
 
       <ScrollView style={ { flex: 1, paddingHorizontal: 50, paddingBottom: 20 } }>
 
-
         <View style={ styles.secImageView }>
 
           <Image
@@ -21,8 +20,13 @@ export default function Security ( props ) {
 
         </View>
 
-        <Text style={ styles.secTitle } >this is title </Text>
-        <Text style={ styles.secSubTitle } >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi obcaecati qui aliquid quam omnis, similique corrupti, eius neque iste aperiam impedit repellat laborum ad alias repudiandae minus cupiditate modi veniam. </Text>
+
+        <View>
+          <Text style={ styles.secTitle } >this is title </Text>
+          <Text style={ styles.secSubTitle } >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi obcaecati qui aliquid quam omnis, similique corrupti, eius neque iste aperiam impedit repellat laborum ad alias repudiandae minus cupiditate modi veniam. </Text>
+
+        </View>
+
         <View style={ styles.secImageView }>
 
           <Image
@@ -32,10 +36,11 @@ export default function Security ( props ) {
 
         </View>
 
-        <Text style={ styles.secTitle } >this is title </Text>
-        <Text style={ styles.secSubTitle } >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi obcaecati qui aliquid quam omnis, similique corrupti, eius neque iste aperiam impedit repellat laborum ad alias repudiandae minus cupiditate modi veniam. </Text>
+        <View>
+          <Text style={ styles.secTitle } >this is title </Text>
+          <Text style={ styles.secSubTitle } >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi obcaecati qui aliquid quam omnis, similique corrupti, eius neque iste aperiam impedit repellat laborum ad alias repudiandae minus cupiditate modi veniam. </Text>
 
-
+        </View>
 
         <View style={ { marginBottom: 40 } }>
           <Text style={ styles.secTitle } >this is title </Text>
@@ -43,9 +48,7 @@ export default function Security ( props ) {
 
         </View>
 
-
       </ScrollView>
-
 
     </View>
   );
@@ -60,7 +63,7 @@ const styles = StyleSheet.create( {
     alignContent: "center",
     alignItems: "center",
     marginVertical: 20
-    // backgroundColor: "red"
+
   },
 
   secTitle: {
