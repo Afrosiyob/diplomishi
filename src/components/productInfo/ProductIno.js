@@ -1,7 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 export default function ProductIno () {
+
+    const [ price, setPrice ] = useState( 25.1 );
+    const [ count, setCount ] = useState( 1 );
+
+
+
+    const increment = () => {
+        setPrice( price + 25.1 );
+        setCount( count + 1 );
+    }
+    const decrement = () => {
+
+
+        if ( price <= 0 ) {
+            setPrice( 0 );
+            setCount( 0 );
+            return 0;
+        } else {
+            setPrice( price - 25.1 );
+            setCount( count - 1 );
+        }
+
+    }
+
     return (
         <View style={ styles.wrapBox }>
 
@@ -33,7 +57,18 @@ export default function ProductIno () {
                 </View>
 
                 <View style={ styles.priceBox }>
-                    <Text style={ { color: "green", fontWeight: "bold", fontStyle: "italic", fontSize: 70 } }> 39.25 $ </Text>
+                    <Text style={ { color: "green", fontWeight: "bold", fontStyle: "italic", fontSize: 70 } }> { price.toFixed( 2 ) } $ </Text>
+                </View>
+
+                <View style={ styles.priceBoxTwo }>
+                    <Pressable style={ styles.priceBoxInnerBtn } onPress={ () => increment() }>
+                        <Text style={ { fontSize: 25, color: "red" } }>+</Text>
+                    </Pressable>
+
+                    <Text style={ { color: 'green', fontWeight: "bold", fontSize: 30 } } > { count } </Text>
+                    <Pressable style={ styles.priceBoxInnerBtn } onPress={ () => decrement() }>
+                        <Text style={ { fontSize: 25, color: "red" } }>-</Text>
+                    </Pressable>
                 </View>
 
                 <View style={ styles.buyBox }>
@@ -95,8 +130,35 @@ const styles = StyleSheet.create( {
     },
     itemBoxText: {
         fontSize: 20
-    }
+    },
 
+    priceBoxTwo: {
+
+        // backgroundColor: 'blue',
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: "center",
+        display: 'flex',
+        marginVertical: 20,
+
+
+
+    },
+    priceBoxInnerBtn: {
+        display: 'flex',
+        justifyContent: "center",
+        alignContent: "center",
+        alignItems: "center",
+        width: 40,
+        height: 40,
+        borderColor: "green",
+        borderWidth: 2,
+        borderRadius: 50,
+        marginHorizontal: 20,
+
+
+
+    }
 
 
 } )
