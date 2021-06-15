@@ -25,13 +25,13 @@ export default function Home(props) {
         img_src: "../../../assets/ae9fa23b8b74f7539aaadc90782ca53e.jpg",
       },
       {
-        title: "USB флеш-накопитель 196,13 - 994,00 руб ",
-        text: "USB флеш-накопитель TECHKEY, водонепроницаемый флеш-накопитель 64 ГБ 32 ГБ 16 ГБ 8 ГБ 4 ГБ, серебристая флешка, U-диск, подарок",
+        title: "MBF 26 RAZMER ",
+        text: "Новый Велосипед МБФ 26 размер 21 скорс багажли камплек фанар Насос замок сумка сув идиши алумин",
         img_src: "../../../assets/ae9fa23b8b74f7539aaadc90782ca53e.jpg",
       },
       {
-        title: "Item 3",
-        text: "Text 3",
+        title: "Прадаётся Велосипед Bars",
+        text: "Прадаётся велосипед Барс 26 состояние как новый ездили мало качества хорошие ...",
         img_src: "../../../assets/ae9fa23b8b74f7539aaadc90782ca53e.jpg",
       },
     ],
@@ -69,7 +69,10 @@ export default function Home(props) {
             borderWidth: 2,
           }}
         >
-          <HeaderText />
+          <HeaderText
+            title="Eng sara sotilgan mahsulotlar"
+            subTitle="Bugungi kundagi ommabop bo'lgan mahsulotlar"
+          />
 
           <View
             style={{
@@ -93,7 +96,10 @@ export default function Home(props) {
           <ProductCard key="4" navigation={navigation} />
           <ProductCard key="5" navigation={navigation} />
         </View>
-        <HeaderText title="map" subTitle="gogo map" />
+        <HeaderText
+          title="Yetkazib berish..."
+          subTitle="Mahsulotingizni xaritadan kuzating..."
+        />
         <GeoMap />
       </ScrollView>
     </SafeAreaView>
